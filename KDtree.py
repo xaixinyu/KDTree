@@ -211,13 +211,15 @@ kd_tree_times = []
 naive_times = []
 
 for n in num_points:
+    # k-d tree method
     points = generate_random_points(n)
     start = time.time()
     kd_tree = KDTree()
     kd_tree.build(points)
     end = time.time()
     kd_tree_times.append(end - start)
-
+    
+    # naive method
     start = time.time()
     naive_search(points)
     end = time.time()
