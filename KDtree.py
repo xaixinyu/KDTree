@@ -203,3 +203,29 @@ plt.ylabel('Running Time (ms)')
 plt.legend()
 plt.show()
 
+#the code on pdf
+import matplotlib.pyplot as plt
+
+num_points = [1000, 2000, 3000, 4000, 5000]
+kd_tree_times = []
+naive_times = []
+
+for n in num_points:
+    points = generate_random_points(n)
+    start = time.time()
+    kd_tree = KDTree()
+    kd_tree.build(points)
+    end = time.time()
+    kd_tree_times.append(end - start)
+
+    start = time.time()
+    naive_search(points)
+    end = time.time()
+    naive_times.append(end - start)
+
+plt.scatter(num_points, kd_tree_times, label='K-D Tree')
+plt.scatter(num_points, naive_times, label='Naive')
+plt.xlabel('Number of Points')
+plt.ylabel('Running Time (s)')
+plt.legend()
+plt.show()
