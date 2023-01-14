@@ -203,7 +203,7 @@ plt.ylabel('Running Time (ms)')
 plt.legend()
 plt.show()
 
-#the code on pdf
+
 import matplotlib.pyplot as plt
 
 num_points = [1000, 2000, 3000, 4000, 5000]
